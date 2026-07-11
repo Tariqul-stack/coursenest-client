@@ -12,6 +12,7 @@ import axiosInstance from '@/lib/axios';
 import { ICourse } from '@/types';
 import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';
+import ReviewsSection from '@/components/courses/ReviewsSection';
 
 export default function CourseDetailPage() {
   const { id } = useParams();
@@ -335,6 +336,8 @@ export default function CourseDetailPage() {
               </div>
             )}
           </div>
+
+          <ReviewsSection courseId={id as string} isEnrolled={isEnrolled} />
 
           {/* Right Sidebar — Instructor Info */}
           {typeof course.instructor === 'object' && (
