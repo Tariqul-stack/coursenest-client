@@ -1,4 +1,5 @@
 import CategoriesSection from '@/components/home/CategoriesSection';
+import FAQSection from '@/components/home/FAQSection';
 import HeroSection from '@/components/home/HeroSection';
 import HowItWorks from '@/components/home/HowItWorks';
 import StatsSection from '@/components/home/StatsSection';
@@ -14,6 +15,7 @@ export default function Home() {
       <StatsSection/>
       <Testimonials/>
       <TeacherCTA/>
+      <FAQSection/>
     </main>
   );
 }
