@@ -17,7 +17,7 @@ const stats = [
     value: 1200,
     suffix: '+',
     label: 'Courses Available',
-    color: '#ffffff',
+    color: '#e94560',
   },
   {
     icon: FiAward,
@@ -31,7 +31,7 @@ const stats = [
     value: 2,
     suffix: 'M+ Earned',
     label: 'By Our Teachers',
-    color: '#ffffff',
+    color: '#e94560',
   },
 ];
 
@@ -107,14 +107,14 @@ const StatsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white bg-opacity-5 backdrop-blur-sm border border-white border-opacity-10 rounded-2xl p-8 text-center hover:bg-opacity-10 transition"
+              className="border border-white border-opacity-10 rounded-2xl p-8 text-center"
+              style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
             >
               {/* Icon */}
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5"
-                style={{ backgroundColor: stat.color + '20' }}
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5"
+                style={{ backgroundColor: 'rgba(233,69,96,0.2)' }}
               >
-                <stat.icon size={26} color={stat.color} />
+                <stat.icon size={26} color="#e94560" />
               </div>
 
               {/* Count */}
