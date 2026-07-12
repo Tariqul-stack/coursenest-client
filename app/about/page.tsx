@@ -171,23 +171,38 @@ const AboutPage = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-[#1a1a2e]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              { value: '2021', label: 'Year Founded' },
-              { value: '50K+', label: 'Students' },
-              { value: '300+', label: 'Mentors' },
-              { value: '1,200+', label: 'Courses' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-4xl font-bold text-[#e94560]">{stat.value}</p>
-                <p className="text-gray-400 text-sm mt-2">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+<section className="py-20 bg-gradient-to-br from-[#1a1a2e] via-[#0f3460] to-[#1a1a2e] relative overflow-hidden">
+  <div className="absolute top-0 left-0 w-64 h-64 bg-[#e94560] opacity-10 rounded-full blur-3xl" />
+  <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#0f3460] opacity-30 rounded-full blur-3xl" />
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-center mb-12">
+      <span className="text-[#e94560] font-semibold text-sm uppercase tracking-wider">
+        By The Numbers
+      </span>
+      <h2 className="text-3xl font-bold text-white mt-2">
+        CourseNest in Numbers
+      </h2>
+    </div>
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        { value: '2021', label: 'Year Founded', icon: '🚀' },
+        { value: '50K+', label: 'Active Students', icon: '👨‍🎓' },
+        { value: '300+', label: 'Expert Mentors', icon: '👨‍🏫' },
+        { value: '1,200+', label: 'Courses Available', icon: '📚' },
+      ].map((stat) => (
+        <div
+          key={stat.label}
+          className="text-center rounded-2xl p-8"
+          style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
+        >
+          <div className="text-4xl mb-3">{stat.icon}</div>
+          <p className="text-4xl font-bold text-[#e94560]">{stat.value}</p>
+          <p className="text-gray-400 text-sm mt-2">{stat.label}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
     </div>
   );
 };
