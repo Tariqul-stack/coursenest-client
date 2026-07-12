@@ -94,29 +94,27 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className={`bg-[#f0f0f0] rounded-2xl p-8 flex flex-col gap-4 transition-all duration-300 ${
-                position === 1
-                  ? 'scale-105 shadow-xl bg-[#1a1a2e]'
-                  : 'shadow-sm'
-              }`}
+             className={`rounded-2xl p-8 flex flex-col gap-4 transition-all duration-300 ${
+  position === 1
+    ? 'scale-105 shadow-xl bg-[#1a1a2e] text-white'
+    : 'bg-[#f0f0f0] shadow-sm'
+}`}
             >
               {/* Stars */}
               <div className="flex gap-1">
-                {[...Array(testimonials[idx].rating)].map((_, i) => (
-                  <FaStar
-                    key={i}
-                    size={14}
-                    color={position === 1 ? '#e94560' : '#f59e0b'}
-                  />
-                ))}
-              </div>
+            {[...Array(testimonials[idx].rating)].map((_, i) => (
+          <FaStar
+      key={i}
+      size={14}
+      color={position === 1 ? '#e94560' : '#f59e0b'}
+    />
+  ))}
+</div>
 
               {/* Text */}
-              <p
-                className={`text-sm leading-relaxed flex-1 ${
-                  position === 1 ? 'text-gray-300' : 'text-gray-600'
-                }`}
-              >
+              <p className={`text-sm leading-relaxed flex-1 ${
+            position === 1 ? 'text-gray-300' : 'text-gray-600'
+            }`}>
                 {testimonials[idx].text}
               </p>
 
