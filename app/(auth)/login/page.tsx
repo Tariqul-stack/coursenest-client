@@ -176,9 +176,12 @@ const LoginPage = () => {
               Register here
             </Link>
           </p>
+           {/* Demo Note */}
+          <p className="text-center text-xs text-gray-400 mt-4"          > Demo accounts are pre-seeded. Use the buttons above to quick login.
+          </p>
         </div>
       </div>
-    </div>
+     </div>
   );
 };
 
