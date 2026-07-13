@@ -128,7 +128,7 @@ export default function AdminDashboard() {
           className="mb-8"
         >
           <h1 className="text-2xl font-bold text-[#1a1a2e]">
-            Admin Dashboard 🔐
+            Admin Dashboard 
           </h1>
           <p className="text-gray-500 mt-1">
             Platform overview and management

@@ -68,7 +68,7 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block bg-[#e94560] bg-opacity-20 text-[#e94560] text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+            <span className="inline-block bg-[#e94560] bg-opacity-20 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
               Our Story
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">

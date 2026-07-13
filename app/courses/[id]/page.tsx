@@ -54,27 +54,33 @@ export default function CourseDetailPage() {
   }, [isAuthenticated, id]);
 
   const handleEnroll = async () => {
-    if (!isAuthenticated) {
-      toast.error('Please login to enroll');
-      router.push('/login');
-      return;
+  if (!isAuthenticated) {
+    toast.error('Please login to enroll');
+    router.push('/login');
+    return;
+  }
+  try {
+    setEnrolling(true);
+    if (course?.isFree) {
+      await axiosInstance.post('/enrollments', { courseId: id });
+      toast.success('Enrolled successfully!');
+      setIsEnrolled(true);
+      router.push(`/courses/${id}/learn`);
+    } else {
+      // Paid course — simulate payment success for now
+      await axiosInstance.post('/enrollments/paid', { courseId: id });
+      toast.success('Course purchased successfully! 🎉');
+      setIsEnrolled(true);
+      setTimeout(() => {
+        router.push('/courses');
+      }, 1500);
     }
-    try {
-      setEnrolling(true);
-      if (course?.isFree) {
-        await axiosInstance.post('/enrollments', { courseId: id });
-        toast.success('Enrolled successfully!');
-        setIsEnrolled(true);
-        router.push(`/courses/${id}/learn`);
-      } else {
-        router.push(`/courses/${id}/checkout`);
-      }
-    } catch (error: any) {
-      toast.error(error?.response?.data?.message || 'Enrollment failed');
-    } finally {
-      setEnrolling(false);
-    }
-  };
+  } catch (error: any) {
+    toast.error(error?.response?.data?.message || 'Enrollment failed');
+  } finally {
+    setEnrolling(false);
+  }
+};
 
   if (loading) {
     return (
@@ -108,7 +114,7 @@ export default function CourseDetailPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Left */}
             <div className="lg:col-span-2">
-              <span className="inline-block bg-[#e94560] bg-opacity-20 text-[#e94560] text-xs font-semibold px-3 py-1 rounded-full mb-4">
+              <span className="inline-block bg-[#e94560] bg-opacity-20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
                 {course.category}
               </span>
               <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
