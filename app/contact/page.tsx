@@ -56,8 +56,8 @@ export default function ContactPage() {
       <div className="bg-gradient-to-br from-[#1a1a2e] via-[#0f3460] to-[#1a1a2e] py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block bg-[#e94560] bg-opacity-20 text-[#e94560] text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
-              Get In Touch
+            <span className="inline-block bg-[#e94560] text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5">
+            Get In Touch
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
               We Would Love to <span className="text-[#e94560]">Hear From You</span>
