@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiPlay } from 'react-icons/fi';
+import { FiCode, FiLayout, FiDatabase } from 'react-icons/fi';
 
 const stats = [
   { value: '50K+', label: 'Active Students' },
@@ -12,9 +13,9 @@ const stats = [
 ];
 
 const floatingCards = [
-  { title: 'Web Development', students: '12,400 students', color: '#e94560' },
-  { title: 'UI/UX Design', students: '8,200 students', color: '#0f3460' },
-  { title: 'Data Science', students: '9,800 students', color: '#1a1a2e' },
+  { title: 'Web Development', students: '12,400 students', icon: FiCode, color: '#e94560' },
+  { title: 'UI/UX Design', students: '8,200 students', icon: FiLayout, color: '#0f3460' },
+  { title: 'Data Science', students: '9,800 students', icon: FiDatabase, color: '#1a1a2e' },
 ];
 
 const HeroSection = () => {
@@ -59,32 +60,34 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Right — Floating Cards */}
-          <div className="hidden lg:flex flex-col gap-4 items-end">
-            {floatingCards.map((card, index) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-2xl p-5 w-72 shadow-xl"
-              >
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-12 h-12 rounded-xl shrink-0"
-                    style={{ backgroundColor: card.color }}
-                  />
-                  <div>
-                    <h3 className="text-[#1a1a2e] font-bold text-sm">
-                      {card.title}
-                    </h3>
-                    <p className="text-gray-500 text-xs mt-0.5">
-                      {card.students}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+<div className="hidden lg:flex flex-col gap-4 items-end">
+  {floatingCards.map((card, index) => (
+    <motion.div
+      key={card.title}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      className="bg-white rounded-2xl p-5 w-72 shadow-xl"
+    >
+      <div className="flex items-center gap-3">
+        <div
+          className="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center"
+          style={{ backgroundColor: card.color }}
+        >
+          <card.icon size={22} color="white" />
+        </div>
+        <div>
+          <h3 className="text-[#1a1a2e] font-bold text-sm">
+            {card.title}
+          </h3>
+          <p className="text-gray-500 text-xs mt-0.5">
+            {card.students}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
         </div>
 
