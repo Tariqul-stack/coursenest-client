@@ -9,6 +9,22 @@ export interface IUser {
   createdAt: string;
 }
 
+export interface ILesson {
+  lessonId: string;
+  title: string;
+  videoUrl: string;
+  duration: number;
+  order: number;
+  isFreePreview: boolean;
+}
+
+export interface IModule {
+  moduleId: string;
+  title: string;
+  order: number;
+  lessons: ILesson[];
+}
+
 export interface ICourse {
   _id: string;
   title: string;
@@ -20,7 +36,8 @@ export interface ICourse {
   category: string;
   level: 'Beginner' | 'Intermediate' | 'Advanced';
   tags: string[];
-  instructor: IUser;
+  instructor: IUser | string;
+  curriculum: IModule[];
   status: 'draft' | 'published';
   totalEnrollments: number;
   averageRating: number;
