@@ -63,16 +63,18 @@ export default function CourseDetailPage() {
     setEnrolling(true);
     if (course?.isFree) {
       await axiosInstance.post('/enrollments', { courseId: id });
-      toast.success('Enrolled successfully!');
+      toast.success('Enrolled successfully! 🎉');
       setIsEnrolled(true);
-      router.push(`/courses/${id}/learn`);
+      setTimeout(() => {
+    router.push('/dashboard/student');
+  }, 1500);
     } else {
       // Paid course — simulate payment success for now
       await axiosInstance.post('/enrollments/paid', { courseId: id });
       toast.success('Course purchased successfully! 🎉');
       setIsEnrolled(true);
       setTimeout(() => {
-        router.push('/courses');
+        router.push('/dashboard/student');
       }, 1500);
     }
   } catch (error: any) {
