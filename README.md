@@ -79,7 +79,7 @@ CourseNest is a modern EdTech platform that connects students with expert instru
 ### Frontend
 | Package | Purpose |
 |---|---|
-| Next.js 14 (App Router) | Frontend framework |
+| Next.js 16 (App Router) | Frontend framework |
 | TypeScript | Type safety |
 | Tailwind CSS | Styling |
 | Framer Motion | Animations |
