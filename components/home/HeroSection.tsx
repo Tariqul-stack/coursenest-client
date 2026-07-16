@@ -34,7 +34,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-flex items-center gap-2 bg-[#e94560] text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-              🚀 The Future of Online Learning
+              The Future of Online Learning
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Learn Without
